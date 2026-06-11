@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <clipPath id="iconClip">
+      <rect x="0" y="0" width="1024" height="1024" rx="230"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="230" fill="#1a1826"/>
+
+  <!-- Subtle left half tint -->
+  <rect x="0" y="0" width="512" height="1024" fill="#ffffff" opacity="0.025" clip-path="url(#iconClip)"/>
+
+  <!-- Flip axis dashed line -->
+  <line x1="512" y1="80" x2="512" y2="944" stroke="#6b5a9e" stroke-width="4" stroke-dasharray="18,12" opacity="0.7"/>
+
+  <!-- W — white/near-white -->
+  <text x="256" y="720" text-anchor="middle" font-size="380" font-weight="500" font-family="Georgia, serif" fill="#f0ecff" clip-path="url(#iconClip)">W</text>
+
+  <!-- Mirrored F — purple accent -->
+  <text x="768" y="720" text-anchor="middle" font-size="380" font-weight="500" font-family="Georgia, serif" fill="#9b7fd4" transform="translate(1536,0) scale(-1,1)" clip-path="url(#iconClip)">F</text>
+
+  <!-- Flip arrow -->
+  <path d="M360,900 Q512,960 664,900" fill="none" stroke="#6b5a9e" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="352,886 344,910 368,904" fill="#6b5a9e"/>
+  <polygon points="672,886 680,910 656,904" fill="#6b5a9e"/>
+</svg>
