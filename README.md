@@ -13,7 +13,7 @@
   [![Tests](https://img.shields.io/badge/tests-47%20passing-22c55e?style=for-the-badge&logo=jest&logoColor=white)](#-testing)
   [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 
-  [![Download APK](https://img.shields.io/badge/Download-Android%20APK-a78bfa?style=for-the-badge&logo=android&logoColor=white)](https://github.com/0zkan95/WordFlip/releases/latest/download/WordFlip-v1.0.0.apk)
+  [![Download APK](https://img.shields.io/badge/Download-Android%20APK-a78bfa?style=for-the-badge&logo=android&logoColor=white)](https://github.com/0zkan95/WordFlip/releases/latest/download/WordFlip-v1.0.1.apk)
 
 </div>
 
@@ -101,12 +101,12 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 
 Grab the latest signed APK from the [**Releases page**](https://github.com/0zkan95/WordFlip/releases/latest), or download it directly:
 
-[![Download APK](https://img.shields.io/badge/Download-WordFlip--v1.0.0.apk-a78bfa?style=for-the-badge&logo=android&logoColor=white)](https://github.com/0zkan95/WordFlip/releases/latest/download/WordFlip-v1.0.0.apk)
+[![Download APK](https://img.shields.io/badge/Download-WordFlip--v1.0.1.apk-a78bfa?style=for-the-badge&logo=android&logoColor=white)](https://github.com/0zkan95/WordFlip/releases/latest/download/WordFlip-v1.0.1.apk)
 
 Transfer the `.apk` to your Android device and open it (enable **"Install unknown apps"** for your file manager/browser first), or install via ADB:
 
 ```bash
-adb install WordFlip-v1.0.0.apk
+adb install WordFlip-v1.0.1.apk
 ```
 
 **Option B — Expo Go (fastest for development)**
