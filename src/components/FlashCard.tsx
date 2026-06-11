@@ -87,8 +87,12 @@ function NativeFlipCard({ front, back, isBack, onFlip }: {
 
   return (
     <Pressable style={{ height:360, marginBottom:12 }} onPress={onFlip}>
-      <Animated.View style={frontStyle}>{front}</Animated.View>
-      <Animated.View style={backStyle}>{back}</Animated.View>
+      {/* The hidden face still sits on top in z-order (later sibling) and would
+          otherwise swallow touches meant for buttons on the visible face
+          (e.g. the speaker icon), bubbling them up to this Pressable's onFlip
+          instead. pointerEvents="none" lets those touches pass through. */}
+      <Animated.View style={frontStyle} pointerEvents={isBack ? 'none' : 'auto'}>{front}</Animated.View>
+      <Animated.View style={backStyle} pointerEvents={isBack ? 'auto' : 'none'}>{back}</Animated.View>
     </Pressable>
   )
 }
