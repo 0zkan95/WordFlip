@@ -12,16 +12,16 @@
   <rect x="0" y="0" width="512" height="1024" fill="#ffffff" opacity="0.025" clip-path="url(#iconClip)"/>
 
   <!-- Flip axis dashed line -->
-  <line x1="512" y1="80" x2="512" y2="944" stroke="#6b5a9e" stroke-width="4" stroke-dasharray="18,12" opacity="0.7"/>
+  <line x1="512" y1="25" x2="512" y2="889" stroke="#6b5a9e" stroke-width="9" stroke-dasharray="18,12" opacity="0.7"/>
 
   <!-- W — white/near-white -->
-  <text x="256" y="720" text-anchor="middle" font-size="380" font-weight="500" font-family="Georgia, serif" fill="#f0ecff" clip-path="url(#iconClip)">W</text>
+  <text x="256" y="665" text-anchor="middle" font-size="380" font-weight="700" font-family="Georgia, serif" fill="#f0ecff" clip-path="url(#iconClip)">W</text>
 
   <!-- Mirrored F — purple accent -->
-  <text x="768" y="720" text-anchor="middle" font-size="380" font-weight="500" font-family="Georgia, serif" fill="#9b7fd4" transform="translate(1536,0) scale(-1,1)" clip-path="url(#iconClip)">F</text>
+  <text x="768" y="665" text-anchor="middle" font-size="380" font-weight="700" font-family="Georgia, serif" fill="#9b7fd4" transform="translate(1536,0) scale(-1,1)" clip-path="url(#iconClip)">F</text>
 
   <!-- Flip arrow -->
-  <path d="M360,900 Q512,960 664,900" fill="none" stroke="#6b5a9e" stroke-width="6" stroke-linecap="round"/>
-  <polygon points="352,886 344,910 368,904" fill="#6b5a9e"/>
-  <polygon points="672,886 680,910 656,904" fill="#6b5a9e"/>
+  <path d="M360,845 Q512,905 664,845" fill="none" stroke="#6b5a9e" stroke-width="11" stroke-linecap="round"/>
+  <polygon points="349,825 338,859 371,851" fill="#6b5a9e"/>
+  <polygon points="675,825 686,859 653,851" fill="#6b5a9e"/>
 </svg>
