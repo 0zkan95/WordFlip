@@ -24,19 +24,6 @@ import type { StudyCard } from '../db/queries'
 import { checkAnswer, WritingResult } from './WritingExerciseCard'
 import { Colors } from '../theme/colors'
 
-// ─── Language code → BCP-47 ───────────────────────────────────────────────────
-
-const LANG_MAP: Record<string, string> = {
-  en: 'en-US', de: 'de-DE', ja: 'ja-JP', fr: 'fr-FR',
-  es: 'es-ES', it: 'it-IT', pt: 'pt-PT', ru: 'ru-RU',
-  ko: 'ko-KR', zh: 'zh-CN', ar: 'ar-SA', hi: 'hi-IN',
-  tr: 'tr-TR', pl: 'pl-PL', nl: 'nl-NL', sr: 'sr-RS',
-}
-
-export function toBCP47(short: string): string {
-  return LANG_MAP[short?.toLowerCase()] ?? 'en-US'
-}
-
 // ─── Result config ────────────────────────────────────────────────────────────
 
 const RESULT_CONFIG: Record<WritingResult, {

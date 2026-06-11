@@ -8,8 +8,9 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  SafeAreaView, ActivityIndicator, Pressable, Alert, Modal, TextInput, ScrollView,
+  ActivityIndicator, Pressable, Alert, Modal, TextInput, ScrollView,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 

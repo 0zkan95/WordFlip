@@ -14,9 +14,10 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import {
-  View, Text, StyleSheet, SafeAreaView, TouchableOpacity,
+  View, Text, StyleSheet, TouchableOpacity,
   ScrollView, ActivityIndicator,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 
@@ -24,7 +25,8 @@ import { useDatabase }     from '../../src/context/DatabaseContext'
 import { useStudySession } from '../../src/hooks/useStudySession'
 import FlashCard           from '../../src/components/FlashCard'
 import WritingExerciseCard, { WritingResult } from '../../src/components/WritingExerciseCard'
-import VoiceRoundCard, { toBCP47 } from '../../src/components/VoiceRoundCard'
+import VoiceRoundCard from '../../src/components/VoiceRoundCard'
+import { toBCP47 } from '../../src/utils/languages'
 import { getDecks, getDeck, getVoiceNotes, getRemainingNewCards, getPracticeCards, createNotification } from '../../src/db/queries'
 import type { StudyCard } from '../../src/db/queries'
 import type { Deck, Rating } from '../../src/db/schema'
@@ -49,7 +51,7 @@ function DeckPicker({ onSelect }: { onSelect: (id: string) => void }) {
   }
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <View style={s.pickerHeader}>
         <Text style={s.pickerTitle}>Study</Text>
         <Text style={s.pickerSub}>Choose a deck to review</Text>
@@ -112,7 +114,7 @@ function SessionSummary({
   const secs = Math.floor((summary.totalTimeMs % 60_000) / 1_000)
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={s.summaryScroll} showsVerticalScrollIndicator={false}>
         <View style={s.summaryWrap}>
           <Text style={{ fontSize: 48, marginBottom: 8 }}>
@@ -175,7 +177,7 @@ function WritingRoundSummary({
 }) {
   const accuracy = total > 0 ? Math.round(((scores.correct + scores.close) / total) * 100) : 0
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: 48, alignItems: 'center' }}>
         <View style={wr.summaryEmoji}>
           <Text style={{ fontSize: 48 }}>{accuracy >= 80 ? '🏆' : accuracy >= 50 ? '✍️' : '📖'}</Text>
@@ -226,7 +228,7 @@ function WritingRoundView({
   }
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <WritingExerciseCard
         card={cards[index]}
         current={index + 1}
@@ -276,7 +278,7 @@ function VoiceRoundSummary({
 }) {
   const accuracy = total > 0 ? Math.round(((scores.correct + scores.close) / total) * 100) : 0
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={{ padding: 24, paddingTop: 48, alignItems: 'center' }}>
         <View style={wr.summaryEmoji}>
           <Text style={{ fontSize: 48 }}>{accuracy >= 80 ? '🎙️' : accuracy >= 50 ? '🗣️' : '📖'}</Text>
@@ -324,7 +326,7 @@ function VoiceRoundView({
   }
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <VoiceRoundCard
         card={cards[index]}
         lang={lang}
@@ -503,7 +505,7 @@ function SessionView({
   const progressPct = progress.total > 0 ? progress.done / progress.total : 0
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <View style={s.sessionHeader}>
         <View>
           <Text style={s.sessionDeck}>Study session</Text>
@@ -555,7 +557,7 @@ function PracticeView({
 
   if (cards.length === 0) {
     return (
-      <SafeAreaView style={s.safe}>
+      <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
         <View style={s.center}>
           <Ionicons name="book-outline" size={48} color={Colors.text.faint} style={{ marginBottom: 16 }} />
           <Text style={{ fontSize: 17, fontWeight: '500', color: Colors.text.primary, marginBottom: 8 }}>

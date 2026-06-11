@@ -5,10 +5,11 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'expo-router'
 import {
-  View, Text, StyleSheet, SafeAreaView,
+  View, Text, StyleSheet,
   ScrollView, ActivityIndicator, TouchableOpacity,
   TextInput, Alert,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
 
 import { useDatabase }      from '../../src/context/DatabaseContext'
@@ -248,7 +249,7 @@ export default function ProfileScreen() {
   const reached   = daily >= minCards
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
 
         {/* ── Hero ────────────────────────────────────────────────────────── */}

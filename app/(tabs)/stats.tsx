@@ -10,8 +10,9 @@
 import React, { useEffect, useState } from 'react'
 import {
   View, Text, StyleSheet, ScrollView,
-  SafeAreaView, ActivityIndicator,
+  ActivityIndicator,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { useDatabase }       from '../../src/context/DatabaseContext'
 import { getDecks, getDailyActivity, getDeckStats, getProfile } from '../../src/db/queries'
@@ -156,7 +157,7 @@ export default function StatsScreen() {
   const totalTimeHrs  = ((profile?.totalStudyTimeMs ?? 0) / 3_600_000).toFixed(1)
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <ScrollView contentContainerStyle={s.scroll}>
         <Text style={s.pageTitle}>Statistics</Text>
 

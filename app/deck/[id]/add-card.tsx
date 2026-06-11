@@ -7,9 +7,10 @@
 import React, { useCallback, useRef, useState } from 'react'
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  TextInput, SafeAreaView, ActivityIndicator,
+  TextInput, ActivityIndicator,
   KeyboardAvoidingView, Platform, Alert, Image,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { Audio } from 'expo-av'

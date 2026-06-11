@@ -8,9 +8,10 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import {
   View, Text, StyleSheet, FlatList, TouchableOpacity,
-  Pressable, ActivityIndicator, SafeAreaView, RefreshControl,
+  Pressable, ActivityIndicator, RefreshControl,
   Modal, TextInput, Alert, Platform, ScrollView,
 } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { useRouter } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 
@@ -511,7 +512,7 @@ export default function HomeScreen() {
   }
 
   return (
-    <SafeAreaView style={s.safe}>
+    <SafeAreaView style={s.safe} edges={['top', 'left', 'right']}>
       <FlatList
         data={decks}
         keyExtractor={(d) => d.id}

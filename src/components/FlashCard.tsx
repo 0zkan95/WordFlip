@@ -17,6 +17,7 @@ import {
   TouchableOpacity, Platform,
 } from 'react-native'
 import * as Speech from '../utils/speech'
+import { toBCP47 } from '../utils/languages'
 import { Colors, posColor }         from '../theme/colors'
 import { formatInterval, previewIntervals } from '../fsrs/scheduler'
 import type { StudyCard }           from '../db/queries'
@@ -123,7 +124,7 @@ export default function FlashCard({
   // ─── TTS ──────────────────────────────────────────────────────────────────
   const speakQuestion = useCallback(() => {
     // Always speak the target language word (card.front) regardless of reversed mode
-    Speech.speak(targetWord, targetLanguage)
+    Speech.speak(targetWord, toBCP47(targetLanguage))
   }, [targetWord, targetLanguage])
 
   const stopPlayback = useCallback(async () => {
