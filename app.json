@@ -8,7 +8,7 @@
       "output": "single",
       "favicon": "./assets/favicon.png"
     },
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -25,7 +25,7 @@
       }
     },
     "android": {
-      "versionCode": 3,
+      "versionCode": 4,
       "adaptiveIcon": {
         "backgroundColor": "#0f0f11",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -49,6 +49,22 @@
           "speechRecognitionPermission": "Allow WordFlip to recognise your speech for voice exercises."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "fc7cedba-6407-42a3-bd25-c31a353e58ba"
+      }
+    },
+    "owner": "hidayet09",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/fc7cedba-6407-42a3-bd25-c31a353e58ba",
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
+    }
   }
 }
