@@ -11,6 +11,7 @@ import {
 } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
+import Constants from 'expo-constants'
 
 import { useDatabase }      from '../../src/context/DatabaseContext'
 import { useAuth }          from '../../src/context/AuthContext'
@@ -434,6 +435,7 @@ export default function ProfileScreen() {
 
         {/* ── Footer ──────────────────────────────────────────────────────── */}
         <Text style={s.footer}>Powered by FSRS-5 spaced repetition</Text>
+        <Text style={s.version}>v{Constants.expoConfig?.version}</Text>
 
       </ScrollView>
     </SafeAreaView>
@@ -566,5 +568,9 @@ const s = StyleSheet.create({
   footer: {
     fontSize: 11, color: Colors.text.faint,
     textAlign: 'center', marginTop: 32,
+  },
+  version: {
+    fontSize: 11, color: Colors.text.faint,
+    textAlign: 'center', marginTop: 4,
   },
 })
