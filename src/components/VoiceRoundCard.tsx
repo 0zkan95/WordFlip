@@ -111,10 +111,13 @@ export default function VoiceRoundCard({ card, lang, current, total, onNext, onS
   }, []))
 
   useSpeechRecognitionEvent('error', useCallback((event) => {
-    const msg = (event as any).message ?? (event as any).error ?? 'Unknown error'
-    // 'no-speech' and 'aborted' are normal; don't show an error for them
-    if (msg !== 'no-speech' && msg !== 'aborted') {
-      setErrorMsg(`Could not recognise speech (${msg})`)
+    // 'no-speech' and 'aborted' are normal (user stayed silent, or we called
+    // abort() on card change/retry); don't show an error for them. Check the
+    // error *code*, not `message` — message is a human sentence like
+    // "Speech recognition aborted." which never matches the code.
+    const code = event.error
+    if (code !== 'no-speech' && code !== 'aborted') {
+      setErrorMsg(`Could not recognise speech (${event.message ?? code})`)
     }
     setCardState('idle')
   }, []))

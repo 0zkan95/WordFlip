@@ -7,6 +7,7 @@
 
 import { Tabs } from 'expo-router'
 import { Platform } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
 import { Colors } from '../../src/theme/colors'
 
@@ -29,6 +30,8 @@ function TabIcon({
 }
 
 export default function TabLayout() {
+  const insets = useSafeAreaInsets()
+
   return (
     <Tabs
       screenOptions={{
@@ -37,9 +40,11 @@ export default function TabLayout() {
           backgroundColor: Colors.bg.base,
           borderTopColor: Colors.tab.border,
           borderTopWidth: 0.5,
-          paddingBottom: Platform.OS === 'ios' ? 20 : 8,
+          // Add the system nav-bar inset so the tab bar clears the on-screen
+          // back/home/recents buttons (or gesture pill) on Android.
+          paddingBottom: Platform.OS === 'ios' ? 20 : 8 + insets.bottom,
           paddingTop: 8,
-          height: Platform.OS === 'ios' ? 80 : 60,
+          height: Platform.OS === 'ios' ? 80 : 60 + insets.bottom,
         },
         tabBarActiveTintColor:   Colors.tab.active,
         tabBarInactiveTintColor: Colors.tab.inactive,
